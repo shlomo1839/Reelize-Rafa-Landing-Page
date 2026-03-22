@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reelize Pro – להפוך רילסים לכסף</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&family=Frank+Ruhl+Libre:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #080808;
+            --white: #f5f5f0;
+            --cream: #f0ede6;
+            --red: #c0392b;
+            --red-bright: #e74c3c;
+            --purple: #6c2eb9;
+            --purple-dark: #3d1568;
+            --gold: #d4a017;
+            --gray: #1a1a1a;
+            --gray-mid: #2c2c2c;
+            --gray-light: #888;
+            --border: rgba(255,255,255,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Heebo', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            direction: rtl;
+        }
+
+        /* ─── STICKY NAV ─── */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8,8,8,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        .nav-logo {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--white), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-cta {
+            background: var(--red);
+            color: var(--white);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .nav-cta:hover { background: var(--red-bright); transform: translateY(-1px); box-shadow: 0 8px 30px rgba(192,57,43,0.4); }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 5% 80px;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108,46,185,0.25) 0%, transparent 65%),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(192,57,43,0.2) 0%, transparent 60%),
+                var(--black);
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; }
+        .hero-badge {
+            display: inline-flex;
+            background: rgba(108,46,185,0.2);
+            border: 1px solid rgba(108,46,185,0.4);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #c084fc;
+            margin-bottom: 32px;
+        }
+        .hero-title {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: clamp(2.4rem, 6vw, 4.8rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+        .hero-title span {
+            background: linear-gradient(135deg, var(--red-bright), var(--gold), var(--red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-sub {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--gray-light);
+            margin-bottom: 48px;
+        }
+        .btn-primary {
+            display: inline-flex;
+            background: linear-gradient(135deg, var(--red), #a93226);
+            color: var(--white);
+            font-size: 1.15rem;
+            font-weight: 800;
+            padding: 18px 44px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 30px rgba(192,57,43,0.35);
+            transition: all 0.35s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 50px rgba(192,57,43,0.5); }
+
+        /* ─── SECTIONS ─── */
+        section { padding: 100px 5%; }
+        .section-label { font-size: 0.75rem; font-weight: 700; color: var(--red-bright); letter-spacing: 3px; margin-bottom: 16px; display: block; }
+        .section-title { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; margin-bottom: 20px; }
+        .section-desc { font-size: 1.1rem; color: var(--gray-light); line-height: 1.75; max-width: 580px; }
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 5%; }
+
+        /* ─── FORM STYLE ─── */
+        .form-wrap {
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 48px 40px;
+            margin-top: 40px;
+            position: relative;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-wrap::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--red), var(--purple), var(--gold));
+        }
+        .form-group { margin-bottom: 20px; text-align: right; }
+        .form-label { font-size: 0.85rem; font-weight: 700; color: var(--gray-light); margin-bottom: 8px; display: block; }
+        .form-input {
+            width: 100%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: var(--white);
+            font-family: inherit;
+            outline: none;
+            direction: rtl;
+        }
+        .form-input:focus { border-color: var(--purple); }
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--red), #a93226);
+            color: white;
+            padding: 18px;
+            border-radius: 12px;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(192,57,43,0.5); }
+
+        /* ─── CURRICULUM GRID ─── */
+        .modules-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .module-card { background: var(--gray); padding: 32px; border-radius: 18px; display: flex; gap: 20px; }
+        .module-num { width: 44px; height: 44px; background: var(--purple); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+
+        /* ─── FOOTER & FLOAT ─── */
+        footer { background: #050505; padding: 40px 5%; text-align: center; border-top: 1px solid var(--border); }
+        .float-btns { position: fixed; bottom: 28px; left: 20px; z-index: 99; }
+        .float-wa { width: 52px; height: 52px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+
+        /* Responsive */
+        @media (max-width: 768px) { .modules-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">Reelize Pro</div>
+        <a href="#register" class="nav-cta">הצטרף עכשיו</a>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">קורס פרמיום ליוצרי תוכן</div>
+            <h1 class="hero-title">צלם וערוך רילסים<br>ברמה של <span>עסק מקצועי</span></h1>
+            <p class="hero-sub">גם אם אתה מתחיל לגמרי, <strong>עם טלפון בלבד</strong></p>
+            <a href="#register" class="btn-primary">👉 אני רוצה להצטרף עכשיו</a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="curriculum">
+        <span class="section-label">מה לומדים</span>
+        <h2 class="section-title">כל מה שתלמד בקורס</h2>
+        <div class="modules-grid">
+            <div class="module-card">
+                <div class="module-num">📸</div>
+                <div><h3>צילום מהטלפון</h3><p>טכניקות תאורה ופריימינג מקצועיות.</p></div>
+            </div>
+            <div class="module-card">
+                <div class="module-num">🎬</div>
+                <div><h3>עריכה מתקדמת</h3><p>קצב, אפקטים וכתוביות שמושכות עין.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="registration" id="register">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <span class="section-label">הרשמה</span>
+            <h2 class="section-title">שמור לי מקום עכשיו</h2>
+            <p class="section-desc" style="margin: 0 auto;">השאר פרטים והתחל ליצור תוכן שמביא כסף.</p>
+        </div>
+
+        <form action="https://formspree.io/f/mkoqlobq" method="POST" class="form-wrap">
+            <div class="form-group">
+                <label class="form-label">שם מלא</label>
+                <input type="text" name="name" class="form-input" placeholder="השם שלך" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">טלפון</label>
+                <input type="tel" name="phone" class="form-input" placeholder="050-0000000" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">אימייל</label>
+                <input type="email" name="email" class="form-input" placeholder="you@email.com" dir="ltr" required>
+            </div>
+            
+            <input type="hidden" name="_next" value="https://reelize-pro.vercel.app">
+            
+            <button type="submit" class="form-submit">
+                👉 שמור לי מקום עכשיו
+            </button>
+            <p style="font-size: 0.8rem; color: var(--gray-light); text-align: center; margin-top: 15px;">🔒 המידע שלך מאובטח</p>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Reelize Pro</div>
+        <p>© 2026 Reelize Pro · כל הזכויות שמורות · Rafael Pinto</p>
+    </footer>
+
+    <div class="float-btns">
+        <a href="https://wa.me/972515990376" target="_blank" class="float-wa">💬</a>
+    </div>
+
+</body>
+</html>
+
