@@ -420,28 +420,65 @@ footer {
   border: 1px solid var(--purple);
   box-shadow: 0 0 30px rgba(108, 46, 185, 0.15);
 }
-
-/* התאמות למובייל */
+/* ─── התאמות מיוחדות לטלפון (iPhone/Android) ─── */
 @media (max-width: 480px) {
-  .main-nav {
-    padding: 0 10px;
-  }
-  .nav-right {
-    font-size: 0.8rem;
-  }
-  .hero {
-    padding-top: 120px;
-  }
-  .hero h1 {
-    font-size: 2.8rem;
-  }
-  .hero-features-wrap {
-    padding: 15px;
-  }
-  .hero-features li {
-    font-size: 0.95rem;
-  }
-  .price-tag {
-    font-size: 3.8rem;
-  }
+    
+    /* 1. הוספת מרווח בין הסקשנים כדי שהדף "ינשום" */
+    section {
+        padding: 60px 15px; /* מרווח עליון ותחתון נעים, וצדדים לא דבוקים למסך */
+    }
+
+    /* 2. הגדלת המרווח ב-Hero */
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 50px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* הקטנה קלה של הכותרת כדי שלא תשבור שורות בצורה מוזרה */
+        line-height: 1.2;
+    }
+
+    /* 3. סידור הבונוסים - אחד מתחת לשני עם רווח */
+    .bonus-grid {
+        gap: 20px;
+    }
+
+    .bonus-card {
+        flex-direction: column; /* האייקון יהיה מעל הטקסט ולא מצד שמאל */
+        text-align: center;     /* מרכוז הטקסט למראה נקי יותר במובייל */
+        padding: 30px 20px;
+    }
+
+    .bonus-content h3 {
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+
+    /* 4. סידור רשימת "מה לומדים" */
+    .features-list li {
+        font-size: 1.1rem;
+        padding: 18px;
+        gap: 15px;
+    }
+
+    /* 5. התאמת הטופס */
+    .main-form {
+        padding: 25px 20px;
+        width: 100%; /* תופס את כל רוחב המסך הזמין */
+    }
+
+    .submit-btn {
+        padding: 16px;
+        font-size: 1rem;
+    }
+
+    /* 6. רווח ב-Navbar */
+    .main-nav {
+        padding: 0 10px;
+    }
+    
+    .nav-right {
+        font-size: 0.8rem; /* מניעת צפיפות בשם המותג */
+    }
 }
