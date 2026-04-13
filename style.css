@@ -147,7 +147,8 @@ body {
   font-weight: 900;
   box-shadow: 0 8px 25px rgba(177, 44, 30, 0.3);
   transition: all 0.3s ease;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 .btn-main:hover {
@@ -161,22 +162,27 @@ body {
   border-radius: 20px;
   border: 1px solid var(--border);
   max-width: 500px;
-  margin: 40px auto 0;
+  margin: 20px auto 0;
 }
 
 .hero-features {
   list-style: none;
-  text-align: right;
+  text-align: center;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ממרכז את תוכן הרשימה אופקית */
 }
 
 .hero-features li {
   font-size: 1.1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 15px;
   /* הוספת רווח בין השורות */
   margin-bottom: 25px;
+  color: var(--white);
 }
 
 .hero-features li:last-child {
@@ -184,15 +190,10 @@ body {
 }
 
 /* צבעי אייקונים */
-.text-gold {
+.text-color {
   color: var(--gold);
 }
-.text-purple {
-  color: #a855f7;
-}
-.text-red {
-  color: var(--red-bright);
-}
+
 
 /* ─── SECTIONS GENERAL ─── */
 section {
@@ -210,7 +211,7 @@ section {
 }
 
 /* ─── ABOUT ─── */
-.about {
+/* .about {
   text-align: center;
   font-size: 30px;
 }
@@ -229,6 +230,40 @@ section {
   max-width: 600px;
   margin: 0 auto;
   color: var(--cream);
+} */
+
+.about {
+  text-align: center; /* מירכוז כל התוכן בסקשן [cite: 2] */
+  padding: 60px 20px;
+}
+
+.section-label {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 2.5rem;
+  color: var(--gold); /* צבע זהב לפי התמונה הראשונה */
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 3px solid var(--red-dark);
+  margin-bottom: 35px;
+  object-fit: cover;
+}
+
+.about-content {
+  max-width: 700px; /* הגדלה קלה כדי להתאים לטקסט הארוך יותר */
+  margin: 0 auto;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--cream);
+  margin-bottom: 20px; /* ריווח בין הפסקאות */
+  text-wrap: balance;
 }
 
 /* ─── CURRICULUM & FEATURES ─── */
@@ -261,31 +296,57 @@ section {
 }
 
 /* ─── PRICING ─── */
-.pricing {
-  background: radial-gradient(
-    circle at bottom,
-    var(--purple-dark) 0%,
-    var(--black) 70%
-  );
+.price-box {
+  text-align: center; /* ממרכז את כל הטקסט בתיבה [cite: 64] */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ממרכז את כל האלמנטים אנכית [cite: 65] */
+  gap: 20px;
 }
 
-.price-box {
-  text-align: center;
+.pricing-intro {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.4;
 }
 
 .price-tag {
-  font-size: 4.5rem;
+  font-size: 1.8rem;
   font-weight: 900;
   color: var(--white);
-  margin: 20px 0;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  margin: 10px 0;
 }
 
-.old-price {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.4);
-  text-decoration: line-through;
-  margin-bottom: 40px;
+/* רשימת היתרונות במרכז */
+.pricing-features-center {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* מוודא שכל שורת V תהיה במרכז [cite: 65] */
+}
+
+.pricing-features-center li {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* מצמיד את ה-V לטקסט במרכז השורה  */
+  gap: 10px;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.pricing-features-center li i {
+  color: #a855f7; /* הצבע הסגול של ה-V [cite: 17] */
+}
+
+/* עיצוב הכפתור שיהיה גדול ובולט כמו בתמונה */
+.price-box .btn-main {
+  margin-top: 20px;
+  width: fit-content;
+  padding: 18px 60px;
 }
 
 /* ─── FAQ ─── */
@@ -482,3 +543,28 @@ footer {
         font-size: 0.8rem; /* מניעת צפיפות בשם המותג */
     }
 }
+
+
+
+
+
+
+
+.bonus-footer-text {
+  text-align: center;
+  margin-top: 50px; /* הגדלת המרווח העליון להפרדה טובה יותר */
+  font-size: 1.8rem; /* הגדלת הטקסט לנוכחות מקסימלית */
+  font-weight: 900;
+  
+  /* אפקט צבע אטרקטיבי - גרדיאנט זהב-אדום מושך עין */
+  background: linear-gradient(135deg, var(--red-bright) 0%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* הוספת צל עדין לטקסט כדי להוסיף עומק */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  
+  opacity: 1; /* ביטול השקיפות כדי שהצבע יהיה חזק */
+}
+
+
