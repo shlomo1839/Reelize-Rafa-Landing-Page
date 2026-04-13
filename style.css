@@ -194,7 +194,6 @@ body {
   color: var(--gold);
 }
 
-
 /* ─── SECTIONS GENERAL ─── */
 section {
   padding: 90px 4%;
@@ -484,90 +483,128 @@ footer {
 
 /* ─── התאמות מיוחדות לטלפון (iPhone/Android) ─── */
 @media (max-width: 480px) {
-    
-    /* סקשנים כללי */
-    section {
-        padding: 60px 15px; 
-    }
+  /* סקשנים כללי */
+  section {
+    padding: 60px 15px;
+  }
 
-    /* Hero */
-    .hero {
-        padding-top: 120px;
-        padding-bottom: 50px;
-    }
+  /* Hero */
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 50px;
+  }
 
-    .hero h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
-    }
+  .hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
 
-    /* ─── תיקון סקשן הבונוסים למובייל ─── */
-    .bonus-grid {
-        gap: 20px;
-    }
+  /* ─── תיקון סקשן הבונוסים למובייל ─── */
+  .bonus-grid {
+    gap: 20px;
+  }
 
-    .bonus-card {
-        flex-direction: row; /* מחזיר את ה-V לצד הטקסט  */
-        align-items: center; /* ממרכז את ה-V והטקסט אנכית זה מול זה */
-        justify-content: center; /* ממרכז את כל הגוש בתוך הכרטיסייה */
-        text-align: right;   /* שומר על יישור טקסט לימין לקריאה נוחה  */
-        padding: 20px 15px;
-        gap: 15px;           /* רווח קבוע בין ה-V לטקסט */
-    }
+  .bonus-card {
+    flex-direction: row; /* מחזיר את ה-V לצד הטקסט  */
+    align-items: center; /* ממרכז את ה-V והטקסט אנכית זה מול זה */
+    justify-content: center; /* ממרכז את כל הגוש בתוך הכרטיסייה */
+    text-align: right; /* שומר על יישור טקסט לימין לקריאה נוחה  */
+    padding: 20px 15px;
+    gap: 15px; /* רווח קבוע בין ה-V לטקסט */
+  }
 
-    .bonus-content h3 {
-        font-size: 1.1rem;
-        margin-top: 0;      /* ביטול המרווח העליון שהיה נחוץ כשהטקסט היה מתחת ל-V  */
-        margin-bottom: 0;
-    }
+  .bonus-content h3 {
+    font-size: 1.1rem;
+    margin-top: 0; /* ביטול המרווח העליון שהיה נחוץ כשהטקסט היה מתחת ל-V  */
+    margin-bottom: 0;
+  }
 
-    /* שאר ההתאמות הקיימות שלך */
-    .features-list li {
-        font-size: 1.1rem;
-        padding: 18px;
-        gap: 15px;
-    }
+  /* שאר ההתאמות הקיימות שלך */
+  .features-list li {
+    font-size: 1.1rem;
+    padding: 18px;
+    gap: 15px;
+  }
 
-    .main-form {
-        padding: 25px 20px;
-        width: 100%;
-    }
+  .main-form {
+    padding: 25px 20px;
+    width: 100%;
+  }
 
-    .submit-btn {
-        padding: 16px;
-        font-size: 1rem;
-    }
+  .submit-btn {
+    padding: 16px;
+    font-size: 1rem;
+  }
 
-    .main-nav {
-        padding: 0 10px;
-    }
-    
-    .nav-right {
-        font-size: 0.8rem;
-    }
+  .main-nav {
+    padding: 0 10px;
+  }
+
+  .nav-right {
+    font-size: 0.8rem;
+  }
 }
-
-
-
-
-
-
 
 .bonus-footer-text {
   text-align: center;
   margin-top: 50px; /* הגדלת המרווח העליון להפרדה טובה יותר */
   font-size: 1.8rem; /* הגדלת הטקסט לנוכחות מקסימלית */
   font-weight: 900;
-  
+
   /* אפקט צבע אטרקטיבי - גרדיאנט זהב-אדום מושך עין */
   background: linear-gradient(135deg, var(--red-bright) 0%, var(--gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   /* הוספת צל עדין לטקסט כדי להוסיף עומק */
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-  
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+
   opacity: 1; /* ביטול השקיפות כדי שהצבע יהיה חזק */
 }
 
+/* ─── SUITABLE FOR SECTION ─── */
+.suitable-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+.suitable-intro {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.suitable-subtitle {
+  font-size: 1.3rem;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* שימוש ב-features-list הקיים מבטיח שהתיבות ייראו אותו דבר */
+.suitable-for .features-list {
+  margin-bottom: 40px;
+}
+
+.suitable-footer {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.5;
+  color: var(--white);
+  margin-top: 40px;
+  /* אפקט דומה למשפט החיזוק של הבונוסים */
+  background: linear-gradient(135deg, var(--red-bright) 0%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* התאמה למובייל */
+@media (max-width: 480px) {
+  .suitable-intro,
+  .suitable-footer {
+    font-size: 1.2rem;
+  }
+}
